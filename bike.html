@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legendary bikes | Premium Showroom</title>
+
+    <style>
+       
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: white;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ff3333; /* Red line */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3333;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ff3333;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            text-shadow: 2px 2px 4px black;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .bike-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 30px;
+        }
+
+        .bike-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .bike-card:hover {
+            transform: translateY(-10px); 
+        }
+
+        .bike-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .brand-name {
+            color: #ff3333;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .bike-name {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .bike-grid {
+                grid-template-columns: 1fr; /* Stack on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">Apex Motors</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Inventory</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Unleash the Beast</h1>
+            <p>Premium Sports Bikes for the Elite Rider</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Our Inventory</h2>
+
+        <div class="bike-grid">
+
+            
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Yamaha R1">
+                <div class="card-content">
+                    <span class="brand-name">Yamaha</span>
+                    <h3 class="bike-name">Yamaha R1M</h3>
+                    <span class="price">34.68lakh</span>
+                    <button class="btn" onclick="book('Yamaha R1M')">Book Now</button>
+                </div>
+            </div>
+
+        
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ducati Panigale">
+                <div class="card-content">
+                    <span class="brand-name">Ducati</span>
+                    <h3 class="bike-name">Panigale V4</h3>
+                    <span class="price">39.45lakh</span>
+                    <button class="btn" onclick="book('Ducati Panigale V4')">BOOK Now</button>
+                </div>
+            </div>
+
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kawasaki Ninja">
+                <div class="card-content">
+                    <span class="brand-name">Kawasaki</span>
+                    <h3 class="bike-name">Ninja H2</h3>
+                    <span class="price">44 lakh</span>
+                    <button class="btn" onclick="book('Kawasaki Ninja H2')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Honda CBR">
+                <div class="card-content">
+                    <span class="brand-name">Honda</span>
+                    <h3 class="bike-name">CBR1000RR-R</h3>
+                    <span class="price">31.88lakh</span>
+                    <button class="btn" onclick="book('Honda CBR1000RR-R')">Book Now</button>
+                </div>
+            </div>
+
+          
+
+            <div class="bike-card">
+                <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="BMW S1000RR">
+                <div class="card-content">
+                    <span class="brand-name">BMW</span>
+                    <h3 class="bike-name">S1000RR</h3>
+                    <span class="price">28.50lakh</span>
+                    <button class="btn" onclick="book('BMW S1000RR')">Book Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Golden Showroom. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function inquire(bikeName) {
+            alert("You are interested in the " + bikeName + ". \n\nWe will contact you shortly!");
+        }
+    </script>
+
+</body>
+</html>   
